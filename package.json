@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:cutsin/detect-private-protocol.git"
+    "url": "git@github.com:cutsin/worker-events.git"
   },
   "license": "MIT"
 }
