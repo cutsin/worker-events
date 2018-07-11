@@ -2,7 +2,7 @@
   "name": "worker-events",
   "version": "0.1.0",
   "description": "Worker Events",
-  "main": "index.js",
+  "module": "index.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:cutsin/worker-events.git"
