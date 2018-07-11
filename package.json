@@ -1,6 +1,6 @@
 {
   "name": "worker-events",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Worker Events",
   "main": "index.js",
   "module": "index.js",
