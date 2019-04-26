@@ -1,20 +1,20 @@
 {
   "name": "worker-events",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Worker Events",
   "main": "cjs/index.js",
   "module": "mjs/index.js",
   "scripts": {
-    "build-mjs": "node_modules/babel-cli/bin/babel.js src --out-dir mjs",
-    "build-cjs": "node_modules/babel-cli/bin/babel.js src --out-dir cjs --presets env,stage-0 --no-babelrc",
+    "build-mjs": "npx babel src --out-dir mjs",
+    "build-cjs": "npx babel src --out-dir cjs --presets=@babel/env --no-babelrc",
     "build": "npm run build-mjs && npm run build-cjs"
   },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-0": "^6.24.1"
+    "@babel/core": "^7.4.3",
+    "@babel/cli": "^7.4.3",
+    "@babel/preset-env": "^7.4.3"
   },
+  "browserslist": "ie 11",
   "repository": {
     "type": "git",
     "url": "git@github.com:cutsin/worker-events.git"
