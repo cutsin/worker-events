@@ -9,16 +9,14 @@ class WorkerEvents {
     this.emit = (eventname, data) => {
       eventId++
       const msg = {data, eventId}
-      // Always trigger event to self-env asynchronous
-      setTimeout(() => {
-        const listener = this.listeners[eventname]
-        if (listener) {
-          listener.forEach((opts, cb) => {
-            cb(msg)
-            if (opts && opts.once) this.off(eventname, cb)
-          })
-        }
-      })
+      // Always trigger event to self-env
+      const listener = this.listeners[eventname]
+      if (listener) {
+        listener.forEach((opts, cb) => {
+          cb(msg)
+          if (opts && opts.once) this.off(eventname, cb)
+        })
+      }
       // In worker, also post to window
       if (!this.inWindow) {
         postMessage(Object.assign(msg, {eventname, cmd: 'worker-events'}))

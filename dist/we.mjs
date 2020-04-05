@@ -36,19 +36,18 @@ var WorkerEvents = function WorkerEvents() {
     eventId++;
     var msg = {
       data: data,
-      eventId: eventId // Always trigger event to self-env asynchronous
+      eventId: eventId // Always trigger event to self-env
 
     };
-    setTimeout(function () {
-      var listener = _this.listeners[eventname];
+    var listener = _this.listeners[eventname];
 
-      if (listener) {
-        listener.forEach(function (opts, cb) {
-          cb(msg);
-          if (opts && opts.once) _this.off(eventname, cb);
-        });
-      }
-    }); // In worker, also post to window
+    if (listener) {
+      listener.forEach(function (opts, cb) {
+        cb(msg);
+        if (opts && opts.once) _this.off(eventname, cb);
+      });
+    } // In worker, also post to window
+
 
     if (!_this.inWindow) {
       postMessage(Object.assign(msg, {

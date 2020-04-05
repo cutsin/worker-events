@@ -1,6 +1,6 @@
 {
   "name": "worker-events",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Worker Events",
   "main": "dist/we-cjs.js",
   "module": "dist/we.mjs",
